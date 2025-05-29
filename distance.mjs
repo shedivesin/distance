@@ -12,7 +12,7 @@ function distance_km(θ1, φ1, θ2, φ2) {
 
 function assert_distance_km(θ1, φ1, θ2, φ2, km) {
   if(!(Math.abs(distance_km(θ1, φ1, θ2, φ2) - km) <= 0.1)) {
-    throw new Error(`Expected ${actual} to be ${expected}±${tol}`);
+    throw new Error(`Expected ${actual} to be ${expected}±0.1`);
   }
 }
 
