@@ -10,9 +10,10 @@ function distance_km(θ1, φ1, θ2, φ2) {
   return Math.sqrt(distance_sq_km(θ1, φ1, θ2, φ2));
 }
 
-function assert_distance_km(θ1, φ1, θ2, φ2, km) {
-  if(!(Math.abs(distance_km(θ1, φ1, θ2, φ2) - km) <= 0.1)) {
-    throw new Error(`Expected ${actual} to be ${expected}±0.1`);
+function assert_distance_km(θ1, φ1, θ2, φ2, expected_km) {
+  const actual_km = distance_km(θ1, φ1, θ2, φ2);
+  if(!(Math.abs(actual_km - expected_km) <= 0.1)) {
+    throw new Error(`Expected ${actual_km} to be ${expected_km}±0.1`);
   }
 }
 
